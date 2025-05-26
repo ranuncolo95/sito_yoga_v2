@@ -1,0 +1,381 @@
+/* ===== About Page Styles ===== */
+@import url('styles.css');
+
+/* About Hero Section */
+.about-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 80px;
+    background-color: var(--primary-dark);
+}
+
+.about-hero .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--text-on-dark);
+    text-shadow: var(--shadow-sm);
+    line-height: 1.2;
+}
+
+.about-hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--text-on-dark);
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-xl);
+    display: block;
+}
+
+/* Instructors Section */
+.instructors {
+    padding: var(--space-xl) 0;
+    background-color: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.section-subtitle {
+    display: block;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+}
+
+.instructor-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-medium);
+}
+
+.instructor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.instructor-image {
+    height: 400px;
+    overflow: hidden;
+}
+
+.instructor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.instructor-card:hover .instructor-image img {
+    transform: scale(1.05);
+}
+
+.instructor-info {
+    padding: var(--space-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.instructor-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+    color: var(--accent);
+}
+
+.specialty {
+    font-family: var(--font-main);
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+}
+
+.bio {
+    margin: var(--space-sm) 0;
+    line-height: 1.6;
+    color: var(--text-muted);
+    flex: 1;
+}
+
+.certifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.cert-badge {
+    background: var(--primary-light);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    border: 1px solid var(--primary-medium);
+    color: var(--text-muted);
+}
+
+.cert-badge i {
+    color: var(--accent);
+}
+
+/* Philosophy Section */
+.philosophy {
+    padding: var(--space-xl) 0;
+    background-color: var(--primary-light);
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.pillar {
+    background: var(--white);
+    padding: var(--space-md);
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition-medium);
+    box-shadow: var(--shadow-sm);
+}
+
+.pillar:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.pillar-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-medium);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-sm);
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.pillar h4 {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    margin-bottom: var(--space-sm);
+    color: var(--accent);
+}
+
+.pillar p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Practices Section */
+.practices {
+    padding: var(--space-xl) 0;
+    background-color: var(--white);
+}
+
+.practice-grid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.practice-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-medium);
+}
+
+.practice-card.reverse {
+    direction: rtl;
+}
+
+.practice-card.reverse > * {
+    direction: ltr;
+}
+
+.practice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.practice-image {
+    height: 400px;
+    overflow: hidden;
+}
+
+.practice-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.practice-card:hover .practice-image img {
+    transform: scale(1.05);
+}
+
+.practice-info {
+    padding: var(--space-lg);
+}
+
+.practice-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-sm);
+    color: var(--accent);
+}
+
+.practice-meta {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.practice-meta i {
+    margin-right: 5px;
+    color: var(--accent);
+}
+
+.practice-info p {
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.benefits h4 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--accent);
+}
+
+.benefits ul {
+    display: grid;
+    gap: var(--space-xs);
+    padding-left: var(--space-md);
+}
+
+.benefits li {
+    position: relative;
+    color: var(--text-muted);
+}
+
+.benefits li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: -15px;
+}
+
+/* CTA Section */
+.about-cta {
+    padding: var(--space-xl) 0;
+    background: linear-gradient(135deg, var(--accent), var(--primary-dark));
+    color: var(--text-on-dark);
+    text-align: center;
+}
+
+.about-cta h2 {
+    color: var(--text-on-dark);
+    margin-bottom: var(--space-md);
+}
+
+.about-cta p {
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+    font-size: 1.1rem;
+    color: var(--primary-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .practice-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .practice-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        height: 50vh;
+    }
+    
+    .about-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .instructor-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .instructor-image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        height: 40vh;
+    }
+    
+    .about-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .practice-info {
+        padding: var(--space-md);
+    }
+    
+    .practice-meta {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+}

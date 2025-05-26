@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Explorer | Luminous Dawn Retreats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Nunito+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --light-gray: #F8F8F8;
+            --font-main: 'Nunito Sans', sans-serif;
+            --font-heading: 'Cormorant Garamond', serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            font-weight: 300;
+            background-color: var(--light-gray);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .color-schemes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 0 60px;
+        }
+        
+        .scheme {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .scheme:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .scheme-preview {
+            height: 150px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        .scheme-info {
+            padding: 25px;
+        }
+        
+        .scheme-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .scheme-info p {
+            margin-bottom: 20px;
+        }
+        
+        .scheme-vars {
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        /* Color Scheme 1 - Ocean Serenity */
+        .scheme-1 .color-1 { background: #E6F4F9; }
+        .scheme-1 .color-2 { background: #B8E0F4; }
+        .scheme-1 .color-3 { background: #4FB3BF; }
+        .scheme-1 .color-4 { background: #2A7F8D; }
+        .scheme-1 .color-5 { background: #D4EDE1; }
+        
+        /* Color Scheme 2 - Earth Harmony */
+        .scheme-2 .color-1 { background: #F5F7F6; }
+        .scheme-2 .color-2 { background: #E3D8C5; }
+        .scheme-2 .color-3 { background: #A68A64; }
+        .scheme-2 .color-4 { background: #5E503F; }
+        .scheme-2 .color-5 { background: #D4D4C9; }
+        
+        /* Color Scheme 3 - Sunset Glow */
+        .scheme-3 .color-1 { background: #FFF5F0; }
+        .scheme-3 .color-2 { background: #FEC8B5; }
+        .scheme-3 .color-3 { background: #F97F51; }
+        .scheme-3 .color-4 { background: #D85A3D; }
+        .scheme-3 .color-5 { background: #F9E3D8; }
+        
+        /* Color Scheme 4 - Forest Retreat */
+        .scheme-4 .color-1 { background: #F2F7F2; }
+        .scheme-4 .color-2 { background: #C8D8C4; }
+        .scheme-4 .color-3 { background: #6B8E6B; }
+        .scheme-4 .color-4 { background: #3A5A40; }
+        .scheme-4 .color-5 { background: #D1E0D1; }
+        
+        /* Color Scheme 5 - Desert Sunrise */
+        .scheme-5 .color-1 { background: #FDF6F0; }
+        .scheme-5 .color-2 { background: #F0D3B8; }
+        .scheme-5 .color-3 { background: #D4A373; }
+        .scheme-5 .color-4 { background: #A25F3A; }
+        .scheme-5 .color-5 { background: #F0E4D8; }
+        
+        /* Color Scheme 6 - Mountain Mist */
+        .scheme-6 .color-1 { background: #F5F7FA; }
+        .scheme-6 .color-2 { background: #D0D8E0; }
+        .scheme-6 .color-3 { background: #7D8FA1; }
+        .scheme-6 .color-4 { background: #4A5C6C; }
+        .scheme-6 .color-5 { background: #E0E6ED; }
+        
+        /* Color Scheme 7 - Lavender Dreams */
+        .scheme-7 .color-1 { background: #F8F5FD; }
+        .scheme-7 .color-2 { background: #D8C8EE; }
+        .scheme-7 .color-3 { background: #9E7BC9; }
+        .scheme-7 .color-4 { background: #6A4B8D; }
+        .scheme-7 .color-5 { background: #E8DCF5; }
+        
+        /* Color Scheme 8 - Sea Glass */
+        .scheme-8 .color-1 { background: #F0F7F7; }
+        .scheme-8 .color-2 { background: #B8D8D8; }
+        .scheme-8 .color-3 { background: #5F9EA0; }
+        .scheme-8 .color-4 { background: #3C6E71; }
+        .scheme-8 .color-5 { background: #D4EDED; }
+        
+        /* Color Scheme 9 - Golden Hour */
+        .scheme-9 .color-1 { background: #FFFBF0; }
+        .scheme-9 .color-2 { background: #F5E3B8; }
+        .scheme-9 .color-3 { background: #E0B252; }
+        .scheme-9 .color-4 { background: #B8860B; }
+        .scheme-9 .color-5 { background: #F5EFD8; }
+        
+        /* Color Scheme 10 - Zen Garden */
+        .scheme-10 .color-1 { background: #F7F7F7; }
+        .scheme-10 .color-2 { background: #D1D1D1; }
+        .scheme-10 .color-3 { background: #888888; }
+        .scheme-10 .color-4 { background: #444444; }
+        .scheme-10 .color-5 { background: #E5E5E5; }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: white;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .color-schemes {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Color Scheme Explorer</h1>
+            <p>Browse our curated collection of color palettes designed specifically for yoga, pilates, and meditation retreat websites. Click any scheme to preview how it would look on your site.</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="color-schemes">
+            <!-- Scheme 1 - Ocean Serenity -->
+            <div class="scheme scheme-1">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Ocean Serenity</h3>
+                    <p>A calming aquatic palette inspired by tropical waters and clear skies. Perfect for beachfront retreats.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #E6F4F9;
+  --primary-medium: #B8E0F4;
+  --primary-dark: #4FB3BF;
+  --accent: #2A7F8D;
+  --secondary: #D4EDE1;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 2 - Earth Harmony -->
+            <div class="scheme scheme-2">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Earth Harmony</h3>
+                    <p>Natural earth tones that create a grounded, organic feeling for nature-based retreats.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #F5F7F6;
+  --primary-medium: #E3D8C5;
+  --primary-dark: #A68A64;
+  --accent: #5E503F;
+  --secondary: #D4D4C9;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 3 - Sunset Glow -->
+            <div class="scheme scheme-3">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Sunset Glow</h3>
+                    <p>Warm, energizing colors inspired by the golden hour. Ideal for dynamic yoga practices.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #FFF5F0;
+  --primary-medium: #FEC8B5;
+  --primary-dark: #F97F51;
+  --accent: #D85A3D;
+  --secondary: #F9E3D8;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 4 - Forest Retreat -->
+            <div class="scheme scheme-4">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Forest Retreat</h3>
+                    <p>Deep greens and fresh accents for woodland or mountain retreat locations.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #F2F7F2;
+  --primary-medium: #C8D8C4;
+  --primary-dark: #6B8E6B;
+  --accent: #3A5A40;
+  --secondary: #D1E0D1;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 5 - Desert Sunrise -->
+            <div class="scheme scheme-5">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Desert Sunrise</h3>
+                    <p>Earthy tones with warm highlights for desert or southwestern-inspired retreats.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #FDF6F0;
+  --primary-medium: #F0D3B8;
+  --primary-dark: #D4A373;
+  --accent: #A25F3A;
+  --secondary: #F0E4D8;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 6 - Mountain Mist -->
+            <div class="scheme scheme-6">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Mountain Mist</h3>
+                    <p>Cool, serene tones that evoke high-altitude tranquility and crisp air.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #F5F7FA;
+  --primary-medium: #D0D8E0;
+  --primary-dark: #7D8FA1;
+  --accent: #4A5C6C;
+  --secondary: #E0E6ED;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 7 - Lavender Dreams -->
+            <div class="scheme scheme-7">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Lavender Dreams</h3>
+                    <p>Soft purples and lilacs that create a dreamy, meditative atmosphere.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #F8F5FD;
+  --primary-medium: #D8C8EE;
+  --primary-dark: #9E7BC9;
+  --accent: #6A4B8D;
+  --secondary: #E8DCF5;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 8 - Sea Glass -->
+            <div class="scheme scheme-8">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Sea Glass</h3>
+                    <p>Soft teals and blues reminiscent of weathered sea glass and coastal calm.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #F0F7F7;
+  --primary-medium: #B8D8D8;
+  --primary-dark: #5F9EA0;
+  --accent: #3C6E71;
+  --secondary: #D4EDED;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 9 - Golden Hour -->
+            <div class="scheme scheme-9">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Golden Hour</h3>
+                    <p>Warm, glowing tones that capture the magic of sunrise and sunset meditation sessions.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #FFFBF0;
+  --primary-medium: #F5E3B8;
+  --primary-dark: #E0B252;
+  --accent: #B8860B;
+  --secondary: #F5EFD8;
+}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scheme 10 - Zen Garden -->
+            <div class="scheme scheme-10">
+                <div class="scheme-preview">
+                    <div class="color-1"></div>
+                    <div class="color-2"></div>
+                    <div class="color-3"></div>
+                    <div class="color-4"></div>
+                    <div class="color-5"></div>
+                </div>
+                <div class="scheme-info">
+                    <h3>Zen Garden</h3>
+                    <p>Monochromatic sophistication inspired by Japanese rock gardens and minimalist design.</p>
+                    <div class="scheme-vars">
+:root {
+  --primary-light: #F7F7F7;
+  --primary-medium: #D1D1D1;
+  --primary-dark: #888888;
+  --accent: #444444;
+  --secondary: #E5E5E5;
+}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Luminous Dawn Retreats. All color schemes are carefully curated for wellness websites.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Make each scheme clickable to preview
+        document.querySelectorAll('.scheme').forEach(scheme => {
+            scheme.addEventListener('click', function() {
+                const schemeName = this.querySelector('h3').textContent;
+                const vars = this.querySelector('.scheme-vars').textContent;
+                
+                alert(`You've selected ${schemeName}.\n\nCopy these CSS variables to implement this scheme:\n\n${vars}`);
+            });
+        });
+    </script>
+</body>
+</html>
