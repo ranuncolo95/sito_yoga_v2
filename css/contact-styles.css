@@ -180,6 +180,25 @@
     }
 }
 
+/* Mobile Menu Overrides */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex !important;
+        position: relative;
+        z-index: 1001;
+        background: transparent;
+        border: none;
+        padding: var(--space-sm);
+        cursor: pointer;
+    }
+
+
+    /* Prevent scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
 /* Validation Styles */
 .invalid {
     border-color: var(--error) !important;

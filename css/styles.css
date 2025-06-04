@@ -941,7 +941,7 @@ footer {
       width: 80%;
       max-width: 300px;
       height: 100vh;
-      background-color: var(--white);
+      background-color: var(--primary-light);
       flex-direction: column;
       padding: var(--space-xl) var(--space-md);
       transition: var(--transition-medium);

@@ -31,6 +31,66 @@
     display: block;
 }
 
+/* Mission Section */
+.mission-about {
+  padding: var(--space-xl) 0;
+  background-color: var(--white);
+  position: relative;
+}
+
+.mission-about, .footer {
+  background: var(--white);
+  color: var(--text-muted); /* Force light text */
+}
+
+.mission-content-about {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-text-about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.philosophy-statement-about {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-family: var(--font-heading);
+  font-weight: 300;
+  color: var(--text-muted);
+  position: relative;
+  display: inline-block;
+}
+
+.philosophy-statement-about::after {
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: var(--primary-medium);
+  margin: var(--space-md) auto;
+}
+
+.philosophy-description-about {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .philosophy-statement-about {
+      font-size: 1.5rem;
+  }
+  
+  .philosophy-description-about {
+      font-size: 1.1rem;
+  }
+}
+
 /* Instructors Section */
 .instructors {
     padding: var(--space-xl) 0;
@@ -46,6 +106,16 @@
     display: block;
     font-family: var(--font-main);
     font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.section-subtitle-title {
+    display: block;
+    font-family: var(--font-main);
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-muted);
