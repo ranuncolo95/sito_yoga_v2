@@ -251,6 +251,19 @@
     font-size: 1.5rem;
 }
 
+.pillar-badge {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-sm);
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
 .pillar h4 {
     font-family: var(--font-heading);
     font-weight: 300;
